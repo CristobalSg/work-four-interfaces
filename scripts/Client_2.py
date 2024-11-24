@@ -1,9 +1,10 @@
 import numpy as np
-import requests, time, io
+import requests, time, io, os
 from random import randint
 import matplotlib.pyplot as plt
 from telegram import Bot
 from telegram import InputFile
+from dotenv import load_dotenv
 
 BASE_URL = "http://127.0.0.1:5000"
 
@@ -95,7 +96,7 @@ if __name__ == "__main__":
     
     # Llamada a la función (ejemplo)
     nodo = "N1"
-    token = "7917951100:AAGaH6g0y71Ij2sQij2T2up2y1jA-2O_j-M"  # Sustituir por tu token del bot de Telegram
+    token = os.getenv('TELEGRAM_TOKEN')  # Sustituir por tu token del bot de Telegram
     chat_id = "falta el id"  # Sustituir por tu chat ID de Telegram
     # PARTE 3 ENVIAR TELEGRAM
     if interruptors[1] == 1:
